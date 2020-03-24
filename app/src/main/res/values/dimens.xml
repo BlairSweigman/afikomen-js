@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright (c) 2020. - All Rights Reserved
+  ~ Unauthorized copying of this file, via any medium is strictly prohibited
+  ~ Proprietary and confidential
+  ~
+  ~ Written by Blair Sweigman <blair.sweigman@gmail.com>
+  -->
+
+<resources>
+    <dimen name="small_margin">5dp</dimen>
+    <dimen name="large_margin">16dp</dimen>
+    <dimen name="med_margin">8dp</dimen>
+    <dimen name="header_ts">24sp</dimen>
+    <dimen name="button_text">16sp</dimen>
+</resources>

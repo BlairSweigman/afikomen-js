@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright (c) 2020. - All Rights Reserved
+  ~ Unauthorized copying of this file, via any medium is strictly prohibited
+  ~ Proprietary and confidential
+  ~
+  ~ Written by Blair Sweigman <blair.sweigman@gmail.com>
+  -->
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorTable"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/txtHeader"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/large_margin"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="@dimen/large_margin"
+        android:text="@string/find_the_afikomen"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        style="@style/header_style" />
+
+    <androidx.gridlayout.widget.GridLayout
+        android:id="@+id/game_grid"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/large_margin"
+        android:layout_marginStart="@dimen/med_margin"
+        android:layout_marginEnd="@dimen/med_margin"
+        app:columnCount="5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txtHeader"
+        app:rowCount="5">
+
+        <ImageView
+            android:id="@+id/box1"
+            android:contentDescription="@string/haggadah"
+            android:layout_margin="@dimen/small_margin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/haggadah" />
+
+        <ImageView
+            android:id="@+id/box2"
+            android:contentDescription="@string/haggadah"
+            android:layout_margin="@dimen/small_margin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/haggadah" />
+
+        <ImageView
+            android:id="@+id/box3"
+            android:contentDescription="@string/haggadah"
+            android:layout_margin="@dimen/small_margin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/haggadah" />
+
+        <ImageView
+            android:id="@+id/box4"
+            android:contentDescription="@string/haggadah"
+            android:layout_margin="@dimen/small_margin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/haggadah" />
+
+        <ImageView
+            android:id="@+id/box5"
+            android:contentDescription="@string/haggadah"
+            android:layout_margin="@dimen/small_margin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/haggadah" />
+
+        <ImageView
+            android:id="@+id/box6"
+            android:contentDescription="@string/haggadah"
+            android:layout_margin="@dimen/small_margin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/haggadah" />
+
+        <ImageView
+            android:id="@+id/box7"
+            android:contentDescription="@string/haggadah"
+            android:layout_margin="@dimen/small_margin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/haggadah" />
+
+        <ImageView
+            android:id="@+id/box8"
+            android:contentDescription="@string/haggadah"
+            android:layout_margin="@dimen/small_margin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/haggadah" />
+
+        <ImageView
+            android:id="@+id/box9"
+            android:contentDescription="@string/haggadah"
+            android:layout_margin="@dimen/small_margin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/haggadah" />
+
+        <ImageView
+            android:id="@+id/box10"
+            android:contentDescription="@string/haggadah"
+            android:layout_margin="@dimen/small_margin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/haggadah" />
+
+        <ImageView
+            android:id="@+id/box11"
+            android:contentDescription="@string/haggadah"
+            android:layout_margin="@dimen/small_margin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/haggadah" />
+
+        <ImageView
+            android:id="@+id/box12"
+            android:contentDescription="@string/haggadah"
+            android:layout_margin="@dimen/small_margin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/haggadah" />
+
+        <ImageView
+            android:id="@+id/box13"
+            android:contentDescription="@string/haggadah"
+            android:layout_margin="@dimen/small_margin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/haggadah" />
+
+        <ImageView
+            android:id="@+id/box14"
+            android:contentDescription="@string/haggadah"
+            android:layout_margin="@dimen/small_margin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/haggadah" />
+
+        <ImageView
+            android:id="@+id/box15"
+            android:contentDescription="@string/haggadah"
+            android:layout_margin="@dimen/small_margin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/haggadah" />
+
+        <ImageView
+            android:id="@+id/box16"
+            android:contentDescription="@string/haggadah"
+            android:layout_margin="@dimen/small_margin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/haggadah" />
+
+        <ImageView
+            android:id="@+id/box17"
+            android:contentDescription="@string/haggadah"
+            android:layout_margin="@dimen/small_margin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/haggadah" />
+
+        <ImageView
+            android:id="@+id/box18"
+            android:contentDescription="@string/haggadah"
+            android:layout_margin="@dimen/small_margin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/haggadah" />
+
+        <ImageView
+            android:id="@+id/box19"
+            android:contentDescription="@string/haggadah"
+            android:layout_margin="@dimen/small_margin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/haggadah" />
+
+        <ImageView
+            android:id="@+id/box20"
+            android:contentDescription="@string/haggadah"
+            android:layout_margin="@dimen/small_margin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/haggadah" />
+
+        <ImageView
+            android:id="@+id/box21"
+            android:contentDescription="@string/haggadah"
+            android:layout_margin="@dimen/small_margin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/haggadah" />
+
+        <ImageView
+            android:id="@+id/box22"
+            android:contentDescription="@string/haggadah"
+            android:layout_margin="@dimen/small_margin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/haggadah" />
+
+        <ImageView
+            android:id="@+id/box23"
+            android:contentDescription="@string/haggadah"
+            android:layout_margin="@dimen/small_margin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/haggadah" />
+
+        <ImageView
+            android:id="@+id/box24"
+            android:contentDescription="@string/haggadah"
+            android:layout_margin="@dimen/small_margin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/haggadah" />
+
+        <ImageView
+            android:id="@+id/box25"
+            android:contentDescription="@string/haggadah"
+            android:layout_margin="@dimen/small_margin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/haggadah" />
+    </androidx.gridlayout.widget.GridLayout>
+
+    <Button
+        android:id="@+id/reset_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/reset"
+        android:layout_margin="@dimen/large_margin"
+        android:padding="@dimen/small_margin"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/afikomen"
+        style="@style/button_style" />
+    <ImageView
+        android:id="@+id/afikomen"
+        android:contentDescription="@string/matzah"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/afikomen"
+        app:layout_constraintTop_toBottomOf="@id/txtHeader"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:visibility="gone"
+
+        />
+    <com.google.android.gms.ads.AdView
+        xmlns:ads="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/adView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        ads:layout_constraintBottom_toBottomOf="parent"
+        ads:layout_constraintStart_toStartOf="parent"
+        ads:layout_constraintEnd_toEndOf="parent"
+        ads:adSize="BANNER"
+        ads:adUnitId="@string/adUnitId">
+    </com.google.android.gms.ads.AdView>
+</androidx.constraintlayout.widget.ConstraintLayout>
