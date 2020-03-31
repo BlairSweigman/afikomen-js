@@ -8,19 +8,21 @@
 
 package ca.worthconsulting.afikomen
 
+import android.graphics.Typeface
 import android.media.MediaPlayer
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-
 import android.view.View
 import android.widget.Button
-import androidx.gridlayout.widget.GridLayout
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
+import androidx.gridlayout.widget.GridLayout
 import com.google.android.gms.ads.AdRequest
 import com.google.android.gms.ads.AdView
-import kotlin.random.Random
 import com.google.android.gms.ads.MobileAds
+import com.google.android.material.snackbar.Snackbar
+import kotlin.random.Random
 
 class MainActivity : AppCompatActivity() {
     private val boxes = mutableListOf<ImageView>()
@@ -29,7 +31,8 @@ class MainActivity : AppCompatActivity() {
     private lateinit var txtHeader : TextView
     private lateinit var gameGrid: GridLayout
     private lateinit var imgAfikomen: ImageView
-    lateinit var mAdView : AdView
+    private var startTime : Long = 0L
+    private lateinit var mAdView : AdView
     private var mediaPlayer: MediaPlayer? = null
     override fun onCreate(savedInstanceState: Bundle?) {
 
@@ -47,6 +50,7 @@ class MainActivity : AppCompatActivity() {
         for (i in 0..24) {
             makeBox(i)
         }
+
         MobileAds.initialize(this) {}
         mAdView = findViewById(R.id.adView)
         val adRequest = AdRequest.Builder().build()
@@ -101,6 +105,9 @@ class MainActivity : AppCompatActivity() {
     inner class SearchListener(private val id: Int) : View.OnClickListener {
         override fun onClick(v: View?) {
             // Log.i("SearchListener","Id is " + id)
+            if (startTime==0L){
+                startTime = System.currentTimeMillis()
+            }
             if (id == afikomen) {
                 txtHeader.setText(R.string.afikomen_found)
                 gameGrid.visibility = View.GONE
@@ -108,11 +115,25 @@ class MainActivity : AppCompatActivity() {
                 resetButton.visibility=View.VISIBLE
                 mediaPlayer = MediaPlayer.create(this@MainActivity, R.raw.dayenu)
                 mediaPlayer!!.start()
-
+                showTime((System.currentTimeMillis()-startTime) / 1000.0)
 
             } else
                 v?.visibility = View.INVISIBLE
 
+
+        }
+        private fun showTime(playTime: Double) {
+
+            val snackbar = Snackbar.make(findViewById(R.id.mainLayout),
+                getString(R.string.gameTime,playTime),
+                Snackbar.LENGTH_LONG)
+            val mainTextView : TextView =
+                snackbar.view.findViewById(com.google.android.material.R.id.snackbar_text)
+           // mainTextView.typeface = Typeface.create("casual",Typeface.BOLD)
+            snackbar.view.setBackgroundColor( ContextCompat.getColor(this@MainActivity,R.color.snackBack))
+            mainTextView.setTextColor(ContextCompat.getColor(this@MainActivity, R.color.snackText))
+            mainTextView.setTextSize(16.0F)
+            snackbar.show()
         }
     }
 
@@ -123,6 +144,7 @@ class MainActivity : AppCompatActivity() {
         override fun onClick(v: View?) {
             //reset last afikomen image back to Hagadah
             dieDayenu()
+            startTime = 0L
             txtHeader.setText(R.string.find_the_afikomen)
             imgAfikomen.visibility = View.GONE
             gameGrid.visibility = View.VISIBLE

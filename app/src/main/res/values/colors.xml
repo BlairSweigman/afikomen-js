@@ -7,4 +7,6 @@
     <color name="colorHeader">#770000</color>
     <color name="colorButtonBg">#ffff33</color>
     <color name="colorButtonText">#ff0000</color>
+    <color name="snackBack">#770000</color>
+    <color name="snackText">#ffffaa</color>
 </resources>

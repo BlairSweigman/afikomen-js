@@ -17,4 +17,5 @@
     <string name="adId">ca-app-pub-6875642631888242~5871702534</string>
     <string name="adUnitId">ca-app-pub-6875642631888242/9427804165</string>
     <string name="testAdUnitId">ca-app-pub-3940256099942544/6300978111</string>
+    <string name="gameTime">לקחתם %.1f שניות!</string>
 </resources>
