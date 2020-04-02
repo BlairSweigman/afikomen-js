@@ -8,10 +8,12 @@
 
 package ca.worthconsulting.afikomen
 
-import android.graphics.Typeface
+import android.animation.AnimatorSet
+import android.animation.ObjectAnimator
 import android.media.MediaPlayer
 import android.os.Bundle
 import android.view.View
+import android.view.animation.AccelerateDecelerateInterpolator
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
@@ -23,6 +25,7 @@ import com.google.android.gms.ads.AdView
 import com.google.android.gms.ads.MobileAds
 import com.google.android.material.snackbar.Snackbar
 import kotlin.random.Random
+
 
 class MainActivity : AppCompatActivity() {
     private val boxes = mutableListOf<ImageView>()
@@ -115,11 +118,13 @@ class MainActivity : AppCompatActivity() {
                 resetButton.visibility=View.VISIBLE
                 mediaPlayer = MediaPlayer.create(this@MainActivity, R.raw.dayenu)
                 mediaPlayer!!.start()
+                dancingImage()
                 showTime((System.currentTimeMillis()-startTime) / 1000.0)
 
-            } else
-                v?.visibility = View.INVISIBLE
-
+            } else {
+                fadeBox(v!!)
+                //v?.visibility = View.INVISIBLE
+            }
 
         }
         private fun showTime(playTime: Double) {
@@ -134,6 +139,26 @@ class MainActivity : AppCompatActivity() {
             mainTextView.setTextColor(ContextCompat.getColor(this@MainActivity, R.color.snackText))
             mainTextView.setTextSize(16.0F)
             snackbar.show()
+        }
+        private fun dancingImage() {
+            val animeTurn = ObjectAnimator.ofFloat(imgAfikomen,"rotation",-45f,45f)
+            animeTurn.setDuration(800)
+            val scaleXAnimation =
+                ObjectAnimator.ofFloat(imgAfikomen, "scaleX", 0.1f, 1.0f)
+            scaleXAnimation.interpolator = AccelerateDecelerateInterpolator()
+            scaleXAnimation.duration = 800
+            val scaleYAnimation =
+                ObjectAnimator.ofFloat(imgAfikomen, "scaleY", 0.01f, 1.0f)
+            scaleYAnimation.interpolator = AccelerateDecelerateInterpolator()
+            scaleYAnimation.duration = 800
+            val animatorSet = AnimatorSet()
+            animatorSet.play(animeTurn).with(scaleXAnimation).with(scaleYAnimation)
+            animatorSet.start()
+        }
+        private fun fadeBox(v:View) {
+            val animateFade = ObjectAnimator.ofFloat(v,"alpha",0F)
+            animateFade.setDuration(300)
+            animateFade.start()
         }
     }
 
@@ -151,7 +176,8 @@ class MainActivity : AppCompatActivity() {
             resetButton.visibility=View.GONE
             afikomen = Random.nextInt(0, 24)
             boxes.forEach {
-                it.visibility = View.VISIBLE
+                it.alpha = 1F
+               // it.visibility = View.VISIBLE
             }
         }
     }
