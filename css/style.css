@@ -1,0 +1,53 @@
+/*
+ This code is copyrighted by Worth Consulting.
+ This code can be modified, but not redistributed without
+ permission of Worth Consulting.
+*/
+/* 
+    Created on : Apr 6, 2020, 10:00:59 AM
+    Author     : Blair Sweigman <blair.sweigman@worthconsulting.ca>
+*/
+
+@font-face {
+    font-family: gochi;
+    src: url('GochiHand-Regular.ttf');
+    font-weight: bold;
+}
+body {
+    background: #ffcccc;
+    font-family: Arial;
+}
+h1,h2,h3 {
+    font-family: gochi;
+    text-align: center;
+}
+table {
+    margin: 0 auto;
+}
+tr {
+    height: 70px;
+    
+}
+td {
+    width: 60px;
+}
+td:empty::after{
+  content: "\00a0";
+}
+#wingame {
+    display: none;
+   width: 400px;
+    margin: 0 auto;
+    
+   
+}
+img#afi {
+     display: block;
+         
+   
+    margin: 0 auto;
+}
+button {
+    display: block;
+     margin: 5px auto;
+}
