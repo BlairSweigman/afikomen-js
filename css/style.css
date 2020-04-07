@@ -26,28 +26,44 @@ table {
 }
 tr {
     height: 70px;
-    
+
 }
 td {
     width: 60px;
 }
 td:empty::after{
-  content: "\00a0";
+    content: "\00a0";
 }
 #wingame {
     display: none;
-   width: 400px;
+    width: 400px;
+    min-height: 500px !important;
     margin: 0 auto;
-    
-   
 }
+#wingame:empty::before {
+    content: "\00a0";
+}
+
 img#afi {
-     display: block;
-         
-   
+    display: block;
+    transform: rotate(0);  
+    transition: all 1.5s;
+    
+
     margin: 0 auto;
 }
 button {
     display: block;
-     margin: 5px auto;
+    margin: 5px auto;
+}
+
+#badge {
+    width: 200px;
+}
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 5rem;
+  margin-bottom: 5px;
 }

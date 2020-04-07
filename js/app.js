@@ -21,6 +21,7 @@ $(document).ready(function () {
                 
                 $("#header").empty().append("Mazel Tov! You found the Afikomen!");
                 $('#wingame').fadeIn(500).show();
+                animateIt();
                 const endTime = new Date().getTime();
                 const duration = (endTime-startTime)/1000;
                 $("#time").empty().append(`You took ${duration} seconds.`);
@@ -57,11 +58,16 @@ $(document).ready(function () {
             e.preventDefault();
             MIDIjs.stop();
             $("#wingame").hide();
+            $('#afi').css('transform','rotate(0deg)');
             resetBoard();
            
         });
     };
-    
+    const animateIt=() =>{
+        
+        $('#afi').css('transform','rotate(135deg)');
+        
+    } ;
     randomize();
     setBoxes();
     onReset();
