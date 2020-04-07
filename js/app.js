@@ -12,7 +12,7 @@ $(document).ready(function () {
     const setBox = (id) => {
      
         $("#trig" + id).click((e) => {
-            e.preventDefault;
+            e.preventDefault();
           
             if (afikomen === id) {
                
@@ -54,7 +54,7 @@ $(document).ready(function () {
     };
     const onReset = () => {
         $("#reset").click((e)=>{
-            e.preventDefault;
+            e.preventDefault();
             MIDIjs.stop();
             $("#wingame").hide();
             resetBoard();
