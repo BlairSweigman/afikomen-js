@@ -55,7 +55,20 @@ $(document).ready(function () {
         $("#trig" + id).click((e) => {
             e.preventDefault();
             if (afikomen === id) {
+<<<<<<< HEAD
                 showWin();
+=======
+               
+                MIDIjs.play('media/dayenu.mid');
+                $("#game").hide();
+                
+                $("#header").empty().append("Mazel Tov! You found the Afikomen!");
+                $('#wingame').fadeIn(500).show();
+                const endTime = new Date().getTime();
+                const duration = (endTime-startTime)/1000;
+                $("#time").empty().append(`You took ${duration} seconds.`);
+                
+>>>>>>> parent of 10b6255... rotating Afikomen
             } else {
                 hideBox(id);
             }
@@ -98,11 +111,15 @@ $(document).ready(function () {
             e.preventDefault();
             MIDIjs.stop();
             $("#wingame").hide();
+<<<<<<< HEAD
             $('#afi').css('transform', 'rotate(0deg)');
+=======
+>>>>>>> parent of 10b6255... rotating Afikomen
             resetBoard();
 
         });
     };
+<<<<<<< HEAD
 
     /**
      * animateIt - Spins the afikomen
@@ -122,5 +139,11 @@ $(document).ready(function () {
     };
 
     main();
+=======
+    
+    randomize();
+    setBoxes();
+    onReset();
+>>>>>>> parent of 10b6255... rotating Afikomen
 });
 
